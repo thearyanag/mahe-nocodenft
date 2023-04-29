@@ -35,9 +35,9 @@ The app can also be modified to store any amount of data for very little cost in
 - Upload photo from gallery
 - Upload that photo to IPFS 
 
-## Todo
-- Upload photo from camera
-- Enable NFT to Google flow so that anyone without the a web3 wallet can also claim the NFT fot Features
+## Flow of App
+![Untitled-2023-04-30-0012-bg](https://user-images.githubusercontent.com/48391385/235319751-83175c06-bb40-4e64-8d58-89ce9f9cd139.png)
+
 
 
 ![image](https://user-images.githubusercontent.com/48391385/235297700-1ea89077-cdaf-43dc-adfd-e1e9440b272b.png)
