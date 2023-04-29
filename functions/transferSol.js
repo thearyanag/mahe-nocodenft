@@ -9,7 +9,8 @@ const {
 } = require("@solana/web3.js");
 const base58 = require("bs58");
 
-let connection = new Connection("https://rpc.helius.xyz/?api-key=f5eb971e-fdec-4683-abf6-9eabee2df6b4");
+let token = process.env.HELIUS_KEY;
+let connection = new Connection(`https://rpc.helius.xyz/?api-key=${token}`);
 
 let privateKeyString = process.env.SOLANA_PRIVATE_KEY;
 
