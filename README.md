@@ -1,38 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# NoCode NFT Generator 
 
-First, run the development server:
+It's a no code website that can be accessed via both Mobile and Desptop to upload/click photos and mint then as NFT's, these can be also shared with frens and all this for FREEEE !!
+
+
+
+## Current Development
+
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  The project is live on vercel and is being continously improved which can be accessed at https://mahe-nocodenft.vercel.app/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Tech Stack
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+**Client:** NextJS
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Usage/Examples
 
-To learn more about Next.js, take a look at the following resources:
+```bash
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app is a replacement for certificates and to store memories on-chain forever
+The app can also be modified to store any amount of data for very little cost in comparision with google/dropbox/onedrive 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Current Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Upload photo from gallery
+- Upload that photo to IPFS 
+
+## Todo
+- Upload photo from camera
+- Enable NFT to Google flow so that anyone without the a web3 wallet can also claim the NFT fot Features
+
+
+![image](https://user-images.githubusercontent.com/48391385/235297700-1ea89077-cdaf-43dc-adfd-e1e9440b272b.png)
+![image](https://user-images.githubusercontent.com/48391385/235297728-975198ee-1f81-407a-a859-3fcf6a86b470.png)
+![image](https://user-images.githubusercontent.com/48391385/235297729-ba53dd73-38a8-4b31-97b4-8be1f299acd7.png)
+![image](https://user-images.githubusercontent.com/48391385/235297743-1c261f3f-3874-4a0d-90d5-10a0da7d4db2.png)
