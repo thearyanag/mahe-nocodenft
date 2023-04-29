@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, Image, Input , VStack} from '@chakra-ui/react';
+import uploadToIPFS from '@/functions/uploadToIPFS';
 
 function ImageUpload() {
   const [image, setImage] = useState(null);
@@ -14,6 +15,13 @@ function ImageUpload() {
     }
   };
 
+  const handleUpload = async () => {
+    const imageBuffer = Buffer.from(image.split(',')[1], 'base64');
+    console.log(imageBuffer); 
+    const ipfsHash = await uploadToIPFS(imageBuffer);
+    console.log(ipfsHash);
+  };
+
   return (
     <VStack m={30} gap={60}>
       {image && <Image src={image} height={300} width={300} alt="uploaded image" />}
@@ -25,10 +33,10 @@ function ImageUpload() {
           borderRadius="md"
         ></Box>
       )}
-      {image && <Button>Upload Image</Button>}
+      {image && <Button onClick={handleUpload}>Upload Image</Button>}
       {image && <Button onClick={() => setImage(null)}>Remove Image</Button>}
       <Input type="file" onChange={handleImageChange} />
-    </VStack>
+    </VStack>   
   );
 }
 
