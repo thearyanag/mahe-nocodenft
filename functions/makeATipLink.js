@@ -8,7 +8,7 @@ const { TipLink } = require('@tiplink/api');
 const makeATipLink = async () => {
     const link_string = await TipLink.create();
 
-    console.log(link_string);
+    // console.log(link_string);
 
     const tiplink = link_string.url.toString()
 

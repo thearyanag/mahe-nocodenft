@@ -1,7 +1,5 @@
 const axios = require('axios');
 
-const token = process.env.UNDERDOG_PROTOCOL_API_KEY;
-
 /**
  * A function to upload the NFT to Underdog Protocol
  * @param {*} name Name of the NFT 
@@ -9,19 +7,19 @@ const token = process.env.UNDERDOG_PROTOCOL_API_KEY;
  * @param {*} receiverAddress The TipLink pubKey
  */
 const uploadToUnderdog = async (name,ipfsLink,receiverAddress) => {
-    let responseData = null;
-
     let data = JSON.stringify({
         "name": name,
         "image": ipfsLink,
         "receiverAddress" : receiverAddress
-
     });
 
+    console.log(data)
+
+    const token = process.env.UNDERDOG_PROTOCOL_API_KEY;
 
     let config = {
-        method: 'get',
-        url: 'https://api.underdogprotocol.com/v2/projects/t/2/nfts',
+        method: 'post',
+        url: 'https://app.underdogprotocol.com/v2/projects/t/1/nfts',
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -31,15 +29,15 @@ const uploadToUnderdog = async (name,ipfsLink,receiverAddress) => {
 
     axios(config)
         .then((response) => {
-            responseData = response.data;
-            let imageURL = responseData.results[0].image
-            return imageURL;
+            console.log(JSON.stringify(response.data));
         })
         .catch((error) => {
             console.log(error);
         });
 
+    const result = await axios(config);
+    return result.data.mintAddress
 };
 
-
 module.exports = uploadToUnderdog;
+
