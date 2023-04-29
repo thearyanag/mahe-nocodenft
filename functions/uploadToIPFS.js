@@ -9,7 +9,6 @@ const uploadToIPFS = async (imageBuffer) => {
         separator: '_',
     });
 
-    console.log("api key: ", process.env.NFT_STORAGE_API_KEY)
     const client = new NFTStorage({ token: process.env.NFT_STORAGE_API_KEY });
 
     const metadata = await client.store({

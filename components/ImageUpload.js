@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button, Image, Input , VStack} from '@chakra-ui/react';
 import uploadToIPFS from '@/functions/uploadToIPFS';
+import uploadToUnderdog from '@/functions/uploadToUnderdog';
 
 function ImageUpload() {
   const [image, setImage] = useState(null);
@@ -17,8 +18,8 @@ function ImageUpload() {
 
   const handleUpload = async () => {
     const imageBuffer = Buffer.from(image.split(',')[1], 'base64');
-    console.log(imageBuffer); 
     const ipfsHash = await uploadToIPFS(imageBuffer);
+    const underdogHash = await uploadToUnderdog();
     console.log(ipfsHash);
   };
 
