@@ -1,6 +1,11 @@
-import { NFTStorage } from 'nft.storage';
+const { NFTStorage, File } = require('nft.storage');
 const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
 
+/**
+ * A function to upload the NFT to IPFS
+ * @param {*} imageBuffer Image Buffer obtained from FE 
+ * @returns 
+ */
 const uploadToIPFS = async (imageBuffer) => {
 
     const name = uniqueNamesGenerator({
@@ -21,4 +26,4 @@ const uploadToIPFS = async (imageBuffer) => {
     return metadata.data.image.href;
 };
 
-export default uploadToIPFS;
+module.exports = uploadToIPFS;

@@ -1,7 +1,10 @@
 const { TipLink } = require('@tiplink/api');
 
-// Create A New TipLink
 
+/**
+ * A function to create a TipLink
+ * @returns A TipLink and the pubKey
+ */
 const makeATipLink = async () => {
     const link_string = await TipLink.create();
 
@@ -19,7 +22,4 @@ const makeATipLink = async () => {
 
 }
 
-makeATipLink().then((result) => {
-    console.log(result);
-});
-// export default makeATipLink;
+module.exports = makeATipLink;
