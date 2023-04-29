@@ -16,9 +16,9 @@ const uploadToIPFS = async (imageBuffer) => {
         description: `${name} is a unique NFT generated and stored on IPFS.`,
         image: new Blob([imageBuffer], { type: 'image/png' }),
     });
+    console.log(metadata.data.image.href);
 
-
-    return metadata.url;
+    return metadata.data.image.href;
 };
 
 export default uploadToIPFS;

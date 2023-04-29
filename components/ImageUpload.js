@@ -7,6 +7,7 @@ function ImageUpload() {
   const [image, setImage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [ipfsHash, setIpfsHash] = useState(null);
+  const [underdogURL, setUnderdogURL] = useState(null);
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -24,12 +25,13 @@ function ImageUpload() {
     const ipfsHashe = await uploadToIPFS(imageBuffer);
     setIsLoading(false);
     setIpfsHash(ipfsHashe)
-    console.log(ipfsHash);
+    const underURL = await uploadToUnderdog();
+    setUnderdogURL(underURL)
   };
 
   return (
     <VStack m={30} gap={60}>
-      <Text fontSize="6xl">create your own NFTs for FREE</Text>
+       <Text fontSize="6xl">create your own NFTs for FREE</Text>
       {image && <Image src={image} height={300} width={300} alt="uploaded image" />}
       {!image && (
         <Box
@@ -39,7 +41,7 @@ function ImageUpload() {
           borderRadius="md"
         ></Box>
       )}
-      {ipfsHash && <Text>
+      {image && ipfsHash && <Text>
         Your NFT Metadata is available at: <a href={ipfsHash}>Click here</a>
         </Text>}
       
