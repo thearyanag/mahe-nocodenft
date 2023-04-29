@@ -9,8 +9,9 @@ It's a no code website that can be accessed via both Mobile and Desptop to uploa
 
 
 ```bash
-  The project is live on vercel and is being continously improved which can be accessed at ![Vercel Link]https://mahe-nocodenft.vercel.app/
+  The project is live on vercel and is being continously improved which can be accessed at 
 ```
+![Deployed Link](https://mahe-nocodenft.vercel.app/)
 
 
 ## Tech Stack
