@@ -33,12 +33,14 @@ function ImageUpload() {
   return (
     <VStack m={30} gap={30}>
       <Heading>Create your own NFTs for FREE</Heading>
-      {image && <Image src={image} height={300} width={300} alt="uploaded image" />}
+      {image && <Image border="2px solid white"
+        borderRadius="md"
+        src={image} height={300} width={300} alt="uploaded image" />}
       {!image && (
         <Box
           height={300}
           width={300}
-          border="1px dashed gray"
+          border="2px dashed white"
           borderRadius="md"
         ></Box>
       )}
@@ -48,7 +50,7 @@ function ImageUpload() {
 
       {image && !isLoading && !ipfsHash && (
         <VStack>
-          <Input  maxLength={25} textColor={'black'} placeholder="NFT Name" onChange={(e) => setNftName(e.target.value)} />
+          <Input maxLength={25} textColor={'black'} placeholder="NFT Name" onChange={(e) => setNftName(e.target.value)} />
           <Button onClick={handleUpload}>Upload to IPFS</Button>
         </VStack>
       )}
