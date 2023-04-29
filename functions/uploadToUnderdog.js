@@ -19,7 +19,7 @@ const uploadToUnderdog = async (name,ipfsLink,receiverAddress) => {
 
     let config = {
         method: 'post',
-        url: 'https://api.underdogprotocol.com/v2/projects/t/1/nfts',
+        url: 'https://app.underdogprotocol.com/v2/projects/t/1/nfts',
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -27,15 +27,8 @@ const uploadToUnderdog = async (name,ipfsLink,receiverAddress) => {
         data: data
     };
 
-    axios(config)
-        .then((response) => {
-            console.log(JSON.stringify(response.data));
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-
     const result = await axios(config);
+    console.log(result.data.mintAddress)
     return result.data.mintAddress
 };
 
