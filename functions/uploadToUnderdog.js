@@ -19,7 +19,7 @@ const uploadToUnderdog = async (name,ipfsLink,receiverAddress) => {
 
     let config = {
         method: 'post',
-        url: 'https://app.underdogprotocol.com/v2/projects/t/1/nfts',
+        url: 'https://api.underdogprotocol.com/v2/projects/t/1/nfts',
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
