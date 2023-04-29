@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, Image, Input , Text, VStack} from '@chakra-ui/react';
+import { Box, Button, Heading, Image, Input, Text, VStack } from '@chakra-ui/react';
 import uploadToIPFS from '@/functions/uploadToIPFS';
 import uploadToUnderdog from '@/functions/uploadToUnderdog';
 
@@ -8,6 +8,7 @@ function ImageUpload() {
   const [isLoading, setIsLoading] = useState(false);
   const [ipfsHash, setIpfsHash] = useState(null);
   const [underdogURL, setUnderdogURL] = useState(null);
+  const [nftName, setNftName] = useState(null);
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -30,8 +31,8 @@ function ImageUpload() {
   };
 
   return (
-    <VStack m={30} gap={60}>
-       <Text fontSize="6xl">create your own NFTs for FREE</Text>
+    <VStack m={30} gap={30}>
+      <Heading>Create your own NFTs for FREE</Heading>
       {image && <Image src={image} height={300} width={300} alt="uploaded image" />}
       {!image && (
         <Box
@@ -42,16 +43,21 @@ function ImageUpload() {
         ></Box>
       )}
       {image && ipfsHash && <Text>
-        Your NFT Metadata is available at: <a href={ipfsHash}>Click here</a>
-        </Text>}
-      
+        Your can see the NFT at <a href={ipfsHash}>{underURL}</a>
+      </Text>}
+
       {image && !isLoading && !ipfsHash && (
-        <Button onClick={handleUpload}>Upload to IPFS</Button>
+        <VStack>
+          <Input  maxLength={25} textColor={'black'} placeholder="NFT Name" onChange={(e) => setNftName(e.target.value)} />
+          <Button onClick={handleUpload}>Upload to IPFS</Button>
+        </VStack>
       )}
-      {image && isLoading && <Button isLoading disabled>Uploading to IPFS...</Button>}
-      {image && <Button onClick={() => setImage(null)}>Remove Image</Button>}
-      <Input type="file" onChange={handleImageChange} />
-    </VStack>   
+      <VStack>
+        {image && isLoading && <Button isLoading disabled>Uploading to IPFS...</Button>}
+        {image && <Button onClick={() => setImage(null)}>Remove Image</Button>}
+        <Input type="file" onChange={handleImageChange} />
+      </VStack>
+    </VStack>
   );
 }
 
