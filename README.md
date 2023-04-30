@@ -35,8 +35,9 @@ The app can also be modified to store any amount of data for very little cost in
 - Upload photo from gallery
 - Upload that photo to IPFS 
 
-## Flow of App
-![Untitled-2023-04-30-0012-bg](https://user-images.githubusercontent.com/48391385/235319751-83175c06-bb40-4e64-8d58-89ce9f9cd139.png)
+## Technical Flow of App
+![Untitled-2023-04-30-0012dsvfdvfdv](https://user-images.githubusercontent.com/48391385/235335195-a23c2411-019d-455c-a9ed-847a0313ece8.png)
+
 
 
 
